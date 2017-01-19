@@ -23,7 +23,6 @@ Sub MergeAllWorkbooks()
     Dim WorkBk As Workbook
     Dim CopyRng As Range
     
-
     ' Calls function to determine if merge worksheet exists
     Exists ("Merge")
 
@@ -153,8 +152,7 @@ Sub MergeAllWorkbooks()
         ' Use Dir to get the next file name.
         FileName = Dir()
     Loop
-        
-        
+     
     ' Populate right-most columns with formulas to parse stop location.
     Range("Q2:Q" & LastPostCopy).FormulaR1C1 = "=IF(ISNUMBER((SEARCH(""Retain"",RC13))), RC11,RC13)"
     Range("R2:R" & LastPostCopy).FormulaR1C1 = _
